@@ -94,6 +94,27 @@ a {
     color: #808080;
 }
 
+.button-alternative {
+    width: 300px;
+    height: 55px;
+    border-radius: 30px;
+    background-color: coral;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    padding-top: 5px;
+    margin-top: 25px;
+}
+
+.button-alternative:hover {
+    background-color: #ef744b;
+}
+
+.button-alternative:active {
+    background-color: #A9A9A9;
+    color: #808080;
+}
+
 .socials {
     padding-bottom: 200px;
 }
