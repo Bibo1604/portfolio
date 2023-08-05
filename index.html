@@ -8,104 +8,88 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/be739e012d.js" crossorigin="anonymous"></script>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://unpkg.com/scrollreveal"></script>
     </head>
     <body>
-        <section class="hero">
-            <nav>
-                <img class="logo" src="src/images/logo.png" alt="Hoang's logo">
-                <ul class="nav-list" id="nav-list">
-                    <li><a href="#about-me">About me</a></li>
-                    <li><a href="#experiences">Experiences</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <button class="hamburger" id="hamburger">
-                    <i class="fas fa-bars"></i>
-                </button>
+        <header class="header" id="header">
+            <a href="#home" class="logo" id="logo">Portfolio.</a>
+
+            <i class="bx bx-menu" id="menu-icon"></i>
+
+            <nav class="navbar" id="navbar">
+                <a href="#about-me">About me</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <i class="bx bxs-moon" id="theme-icon"></i>
             </nav>
-            <div class="area">
-                <div class="name">
-                    <h1>Minh Hoang Nguyen</h1>
-                    <p>Software Developer</p>
-                    <div class="button"><a href="#about-me">About me</a></div>
-                    <div class="button-alternative"><a href="src/images/CV.pdf" download target="_blank">Download CV</a></div>
-                </div>
+        </header>
+
+        <!-- Home Section -->
+        <section class="home" id="home">
+            <div class="home-content">
+                <h1>Minh Hoang Nguyen</h1>
+                <p>Software Developer</p>
+
                 <div class="socials">
-                    <div>
-                        <a href="https://www.linkedin.com/in/minh-hoang-nguyen-a08141262/" class="social" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="50" height="50" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://github.com/Bibo1604" class="social" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="50" height="50" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-4.466 19.59c-.405.078-.534-.171-.534-.384v-2.195c0-.747-.262-1.233-.55-1.481 1.782-.198 3.654-.875 3.654-3.947 0-.874-.312-1.588-.823-2.147.082-.202.356-1.016-.079-2.117 0 0-.671-.215-2.198.82-.64-.18-1.324-.267-2.004-.271-.68.003-1.364.091-2.003.269-1.528-1.035-2.2-.82-2.2-.82-.434 1.102-.16 1.915-.077 2.118-.512.56-.824 1.273-.824 2.147 0 3.064 1.867 3.751 3.645 3.954-.229.2-.436.552-.508 1.07-.457.204-1.614.557-2.328-.666 0 0-.423-.768-1.227-.825 0 0-.78-.01-.055.487 0 0 .525.246.889 1.17 0 0 .463 1.428 2.688.944v1.489c0 .211-.129.459-.528.385-3.18-1.057-5.472-4.056-5.472-7.59 0-4.419 3.582-8 8-8s8 3.581 8 8c0 3.533-2.289 6.531-5.466 7.59z"/></svg>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.instagram.com/hoang_nguyen164/" class="social" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="50" height="50" viewBox="0 0 24 24"><path d="M15.233 5.488c-.843-.038-1.097-.046-3.233-.046s-2.389.008-3.232.046c-2.17.099-3.181 1.127-3.279 3.279-.039.844-.048 1.097-.048 3.233s.009 2.389.047 3.233c.099 2.148 1.106 3.18 3.279 3.279.843.038 1.097.047 3.233.047 2.137 0 2.39-.008 3.233-.046 2.17-.099 3.18-1.129 3.279-3.279.038-.844.046-1.097.046-3.233s-.008-2.389-.046-3.232c-.099-2.153-1.111-3.182-3.279-3.281zm-3.233 10.62c-2.269 0-4.108-1.839-4.108-4.108 0-2.269 1.84-4.108 4.108-4.108s4.108 1.839 4.108 4.108c0 2.269-1.839 4.108-4.108 4.108zm4.271-7.418c-.53 0-.96-.43-.96-.96s.43-.96.96-.96.96.43.96.96-.43.96-.96.96zm-1.604 3.31c0 1.473-1.194 2.667-2.667 2.667s-2.667-1.194-2.667-2.667c0-1.473 1.194-2.667 2.667-2.667s2.667 1.194 2.667 2.667zm4.333-12h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm.952 15.298c-.132 2.909-1.751 4.521-4.653 4.654-.854.039-1.126.048-3.299.048s-2.444-.009-3.298-.048c-2.908-.133-4.52-1.748-4.654-4.654-.039-.853-.048-1.125-.048-3.298 0-2.172.009-2.445.048-3.298.134-2.908 1.748-4.521 4.654-4.653.854-.04 1.125-.049 3.298-.049s2.445.009 3.299.048c2.908.133 4.523 1.751 4.653 4.653.039.854.048 1.127.048 3.299 0 2.173-.009 2.445-.048 3.298z"/></svg>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.facebook.com/profile.php?id=100009792823909" class="social" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="50" height="50" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-3 7h-1.924c-.615 0-1.076.252-1.076.889v1.111h3l-.238 3h-2.762v8h-3v-8h-2v-3h2v-1.923c0-2.022 1.064-3.077 3.461-3.077h2.539v3z"/></svg>
-                        </a>
-                    </div>
+                    <a href="https://www.linkedin.com/in/minh-hoang-nguyen-a08141262/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://github.com/Bibo1604" target="_blank"><i class="bx bxl-github"></i></a>
+                    <a href="https://www.instagram.com/hoang_nguyen164/" target="_blank"><i class="bx bxl-instagram-alt"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100009792823909" target="_blank"><i class="bx bxl-facebook"></i></a>
                 </div>
+
+                <a href="src/images/CV.pdf" class="btn" download target="_blank">Download CV</a>
             </div>
         </section>
 
         <!-- About Me Section -->
-        <section class="sub-section" id="about-me">
-            <div class="information">
-                <h2>About Me</h2>
-                <p>My name is Minh Hoang Nguyen who is graduated from University of Alberta. I am a Software Developer.</p>
-            </div>
-            <div class="headshot-container">
-                <img class="headshot" src="src/images/headshot.png" alt="Hoang's headshot" />
-            </div>
-        </section>
+        <section class="about" id="about-me">
+            <div class="row">
+                <div class="about-img">
+                    <img src="src/images/headshot.png" alt="Hoang's headshot" />
+                </div>
+                <div class="about-content">
+                    <h2 class="heading">About <span>Me</span></h2>
+                    <p>Hi! I am Minh Hoang Nguyen, a graduate from the University of Alberta with a major in Computer Science and a minor in Mathematics. I am a highly motivated and detail-oriented software developer with a strong foundation in programming principles and problem-solving. I am seeking a position to contribute to a dynamic software development team and gain practical experience in developing robust and efficient applications.</p>
+                    <!-- <a href="#" class="btn">Read More</a> -->
+    
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('experiences')">Experiences</p>
+                        <p class="tab-links" onclick="opentab('achievements')">Achievements</p>
+                    </div>
 
-        <!-- Experiences Section -->
-        <section  class="sub-section-experiences" id="experiences">
-            <h2 style="text-align: center;">Experiences</h2>
-            <div>
-                <h3>Software Developer Intern at Co-Well Asia (May 2022 - Aug 2022) </h3>
-                <ul>
-                    <li><p style="font-size: 20px;">Used Django Framework and Python to develop a website that shows a list of all classes in a school and update students, teachers information of each class. Each student has an account to login to the school website to their grades and teachers' contact for the subjects that they took. All information were uploaded to the database.</p></li>
-                    <li><p style="font-size: 20px;">Participated in code reviews, debugging, and testing to ensure high-quality deliverables.</p></li>
-                    <li><p style="font-size: 20px;">Contributed and collaborated with the training team to help the company build a topics of Artificial Intelligence for an international competition for high school students - young developers from other countries in Asia.</p></li>
-                </ul>
-            </div>
-            <hr/>
-            <div>
-                <h3>Software Developer Intern at X-Media (May 2021 - Aug 2021)</h3>
-                <ul>
-                    <li><p style="font-size: 20px;">Developed Windows Apps using .NET Framework. Used $C\#$ .NET Framework to create a Monopoly game app; created an app that keep track the results of all soccer matches of the 2020 UEFA European Championship.</p></li>
-                    <li><p style="font-size: 20px;">Assisted senior developers in designing and developing software solutions for client projects.</p></li>
-                </ul>
-            </div>
-            <hr/>
-            <div>
-                <h3>Software Developer Intern at Accreon (Sep 2018 - Dec 2018)</h3>
-                <ul>
-                    <li><p style="font-size: 20px;">Developed many programs in Java that optimize the workflow of the employees in the company, saving hundreds of working hours.</p></li>
-                    <li><p style="font-size: 20px;">Get to know Canadian work culture and ethics, as well as communications in an office setting.</p></li>
-                </ul> 
-            </div>
-            <hr/>
-            <div>
-                <h3>Event Technician at Federation for the Humanities and Social Sciences (May 2022 - Jun 2022)</h3>
-                <ul>
-                    <li><p style="font-size: 20px;">Monitored online sessions and helped with technical issues, ensured all sessions run smoothly, assisted scholars to deliver presentations, kept records of sessions and reported to Federation</p></li>
-                </ul>
+                    <div class="tab-contents active-tab" id="education">
+                        <ul>
+                            <li><span>2019 - 2023</span><br>University of Alberta</li>
+                            <li><span>2017 - 2019</span><br>Fredericton Christian Academy</li>
+                            <li><span>2016 - 2017</span><br>HaNoi - Amsterdam High School for Gifted</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experiences">
+                        <ul>
+                            <li><span>May 2022 - Aug 2022</span><br>Software Developer Intern at Co-Well Asia</li>
+                            <li><span>May 2021 - Aug 2021</span><br>Software Developer Intern at X-Media</li>
+                            <li><span>Sep 2018 - Dec 2018</span><br>Software Developer Intern at Accreon</li>
+                            <li><span>May 2022 - Jun 2022</span><br>Event Technician at Federation for the Humanities and Social Sciences</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="achievements">
+                        <ul>
+                            <li><span>July 2023</span><br>IBM Full Stack Software Developer Professional Certificate</li>
+                            <li><span>2023</span><br>Dean's Honor Roll</li>
+                            <li><span>2019</span><br>A University of Alberta Maple Leaf First Year Excellence Scholarship</li>
+                            <li><span>2019</span><br>An International Student Scholarship (University of Alberta)</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section class="sub-section-skills" id="skills">
-            <h2 style="text-align: center; color: white;">Skills</h2>
+        <section class="skills" id="skills">
+            <h2 class="heading">My <span>Skills</span></h2>
             <div class="container">
                 <div class="skills-box">
                     <div class="img">
@@ -181,41 +165,74 @@
         </section>
 
         <!-- Projects Section -->
-        <section class="sub-section-projects" id="projects">
-            <h2>Projects</h2>
+        <section class="projects" id="projects">
+            <h2 class="heading" id="heading">My <span>Projects</span></h2>
             <div class="project-container">
-                <div class="project-card">
-                    <h3>QRCodeGame</h3>
-                    <p class="subtext">We used Android Studio and Java to create an Android game that is similar to Pokemon Go, but we hunt for QR codes instead of Pokemon.</p>
-                    <hr/>
-                    <p class="link-text"><a class="project-link" href="https://github.com/CMPUT301W22T30/QRCode" target="_blank">View Project</a></p>
+                <div class="project-box">
+                    <img src="src/images/project1.png" alt="">
+                    <div class="project-layer">
+                        <h4>QRCodeGame</h4>
+                        <p>We used Android Studio and Java to create an Android game that is similar to Pokemon Go, but we hunt for QR codes instead of Pokemon.</p>
+                        <a href="https://github.com/CMPUT301W22T30/QRCode" target="_blank"><i class="bx bx-link-external"></i></a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Car Dealer Website</h3>
-                    <p class="subtext">This is a national car dealership with local branches in the US. I created a website that allows new and existing customers to look up different branches by state and look at customer reviews of the various branches. Every customer can create an account and add their reviews for any of the branches.</p>
-                    <hr/>
-                    <p class="link-text"><a class="project-link" href="https://github.com/Bibo1604/CarDealer" target="_blank">View Project</a></p>
+                <div class="project-box">
+                    <img src="src/images/project2.png" alt="">
+                    <div class="project-layer">
+                        <h4>Car Dealer Website</h4>
+                        <p>I created a website that allows new and existing customers to look up different branches by state and look at customer reviews of the various branches.</p>
+                        <a href="https://github.com/Bibo1604/CarDealer" target="_blank"><i class="bx bx-link-external"></i></a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Database and File Management</h3>
-                    <p class="subtext">We used SQL and Python to write a system that is similar to Facebook or other social media. Users can login or register, then post a question and also search, answer, vote, or mark a question posted by others. All the users and posts information were uploaded to the database.</p>
-                    <hr/>
-                    <p class="link-text"><a class="project-link" href="https://github.com/Bibo1604/CMPUT291" target="_blank">View Project</a></p>                </div>
-                <div class="project-card">
-                    <h3>Portfolio</h3>
-                    <p class="subtext">I created my own portfolio website which includes all my experiences and contact.</p>
-                    <hr/>
-                    <p class="link-text"><a class="project-link" href="https://github.com/Bibo1604/portfolio" target="_blank">View Project</a></p>                </div>
+                <div class="project-box">
+                    <img src="src/images/project3.png" alt="">
+                    <div class="project-layer">
+                        <h4>Database Management</h4>
+                        <p>We used SQL and Python to write a system that is similar to Facebook or other social media.</p>
+                        <a href="https://github.com/Bibo1604/CMPUT291" target="_blank"><i class="bx bx-link-external"></i></a>
+                    </div>
+                </div>
+                <div class="project-box">
+                    <img src="src/images/project4.png" alt="">
+                    <div class="project-layer">
+                        <h4>Portfolio</h4>
+                        <p>I created my own portfolio website which includes all my experiences and contact.</p>
+                        <a href="https://github.com/Bibo1604/portfolio" target="_blank"><i class="bx bx-link-external"></i></a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <footer id="contact">
-            <h2>Contact Me</h2>
-            <p>hoangnguyenminh16@gmail.com</p>
-            <p>(+1) 825 343-1604</p>
-        </footer>
+        <section class="contact" id="contact">  
+            <div class="row">
+                <div class="contact-left">
+                    <h2 class="heading">Contact <span>Me</span></h2>
+                    <p><i class="bx bxs-envelope"></i> hoangnguyenminh16@gmail.com</p>
+                    <p><i class="bx bxs-phone"></i> (+1) 825 343-1604</p>
+                </div>
+                <div class="contact-right">
+                    <form id="form">
+                        <div class="input-box">
+                            <input type="text" name="Name" id="name" placeholder="Full Name" required>
+                            <input type="email" name="Email" id="email" placeholder="Email Address" required>
+                            <input type="text" name="Subject" id="subject" placeholder="Subject" required>
+                        </div>
+                        <textarea name="Message" id="message" cols="30" rows="7" placeholder="Your Message"></textarea>
+                        <input type="submit" value="Send Message" class="btn" id="submit">
+                    </form>
+                </div>
+            </div>
+        </section>
 
+        <footer class="footer" id="footer">
+            <div class="footer-text">
+                <p>Copyright © 2023 by Minh Hoang Nguyen.</p>
+            </div>
+            <div class="footer-iconTop">
+                <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+            </div>
+        </footer>
         <script src="src/app.js"></script>
     </body>
 </html>

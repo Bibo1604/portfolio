@@ -1,8 +1,107 @@
-const hamburgerButton = document.getElementById('hamburger')
-const navList = document.getElementById('nav-list')
+/* ========== about me section ========== */
+
+let tablinks = document.getElementsByClassName('tab-links');
+let tabcontents = document.getElementsByClassName('tab-contents');
+
+function opentab(tabname) {
+    for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
+    }
+
+    for (tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add('active-link');
+    document.getElementById(tabname).classList.add('active-tab');
+};
+
+/* ========== menu icon ========== */
+
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
 
 function toggleButton() {
-    navList.classList.toggle('show')
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};
+
+menuIcon.addEventListener('click', toggleButton);
+
+/* ========== theme mode ========== */
+
+let theme = document.querySelector('#theme-icon');
+let root_theme = document.querySelector(':root');
+
+function toggleTheme() {
+    theme.classList.toggle('bxs-sun');
+    bg_color = getComputedStyle(root_theme).getPropertyValue('--bg-color');
+    second_bg_color = getComputedStyle(root_theme).getPropertyValue('--second-bg-color');
+    text_color = getComputedStyle(root_theme).getPropertyValue('--text-color');
+    main_color = getComputedStyle(root_theme).getPropertyValue('--main-color')
+
+    if (bg_color == '#1f242d') {
+        root_theme.style.setProperty('--bg-color', '#f5f5dc');
+    }
+    else if (bg_color == '#f5f5dc'){
+        root_theme.style.setProperty('--bg-color', '#1f242d');
+    }
+
+    if (second_bg_color == '#323946') {
+        root_theme.style.setProperty('--second-bg-color', '#fafdf3');
+    }
+    else if (second_bg_color == '#fafdf3'){
+        root_theme.style.setProperty('--second-bg-color', '#323946');
+    }
+
+    if (text_color == '#fff') {
+        root_theme.style.setProperty('--text-color', '#000000')
+    }
+    else if (text_color == '#000000'){
+        root_theme.style.setProperty('--text-color', '#fff');
+    }
+    
+    if (main_color == '#0ef') {
+        root_theme.style.setProperty('--main-color', 'coral')
+    }
+    else if (main_color == 'coral'){
+        root_theme.style.setProperty('--main-color', '#0ef');
+    }
 }
 
-hamburgerButton.addEventListener('click', toggleButton)
+theme.addEventListener('click', toggleTheme);
+
+/* ========== scroll reveal ========== */
+
+ScrollReveal({
+    reset: true,
+    distance: '80px',
+    duration: 2000,
+    delay: 200
+});
+
+ScrollReveal().reveal('.home-content, .heading', {origin: 'top'});
+ScrollReveal().reveal('.about-img, .container, .project-box, .contact-right form', {origin: 'bottom'});
+ScrollReveal().reveal('.home-content h1, .contact-left', {origin: 'left'});
+ScrollReveal().reveal('.about-content', {origin: 'right'});
+
+/* ========== contact form activation ========== */
+
+const form = document.querySelector("#form")
+const submitButton = document.querySelector("#submit")
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyMJRNRU5fNKHrpcwFrJ5P0BWcBf8FLvLaBtYxujNZAuobgWtRex7YQvbz-8Tes-RQ9_w/exec'
+
+form.addEventListener('submit', e => {
+    submitButton.disabled = true
+    e.preventDefault()
+    let requestBody = new FormData(form)
+    fetch(scriptURL, { method: 'POST', body: requestBody})
+    .then(response => {
+        alert('Success!', response)
+        submitButton.disabled = false
+        })
+    .catch(error => {
+    alert('Error!', error.message)
+        submitButton.disabled = false
+
+    })
+})
