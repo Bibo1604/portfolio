@@ -237,11 +237,16 @@ span {
     color: var(--text-color);
 }
 
+.skills h2 {
+    margin-top: 60px;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     align-items: center;
+    text-align: center;
     grid-gap: 1rem;
     padding: 1rem 80px;
     font-size: 1.2rem;
@@ -249,8 +254,54 @@ span {
 
 .skills-box {
     padding: 1rem;
-    color: #ddd;
+    color: var(--text-color);
     cursor: pointer;
+}
+
+.skills-box:hover > .skills-title:after,  .skills-box:hover > .skills-title:before{
+    width: 35px;
+}
+
+.skills-box:hover .img {
+    transform: translateY(-10px);
+}
+
+.skills-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.skills-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    width: 0;
+    height: 4px;
+    border-radius: 2px 0 0 2px;
+    background-color: var(--main-color);
+    transition: 0.5s;
+}
+
+.skills-title:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    border-radius: 0 2px 2px 0;
+    background-color: var(--main-color);
+    transition: 0.5s;
+}
+
+.skills-title h3 {
+    color: var(--text-color);
+    margin-top: 0.5rem;
 }
 
 .img {
@@ -265,13 +316,26 @@ span {
     flex-direction: column;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
+    transition: 0.5s;
+}
+
+.img:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 90px;
+    background: rgba(100, 100, 100, 0.5);
+    border-radius: 45px 0 0 45px;
 }
 
 .skills-icon {
-    width: 50px;
+    width: 60px;
+    z-index: 2;
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1100px){
     .container {
         grid-template-columns: repeat(2, 1fr);
         padding: 2rem 50px;
@@ -373,7 +437,7 @@ span {
 }
 
 .contact-left {
-    flex-basis: 35%;
+    flex-basis: 45%;
 }
 
 .contact-left p {
@@ -388,7 +452,7 @@ span {
 }
 
 .contact-right {
-    flex-basis: 60%;
+    flex-basis: 50%;
 }
 
 .contact form {
@@ -498,10 +562,10 @@ span {
         flex-wrap: wrap;
     }
     .contact-left p {
-        font-size: 15px;
+        font-size: 20px;
     }
     
     .contact-left p i {
-        font-size: 15px;
+        font-size: 20px;
     }
 }
