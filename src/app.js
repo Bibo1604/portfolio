@@ -13,7 +13,36 @@ function opentab(tabname) {
     }
     event.currentTarget.classList.add('active-link');
     document.getElementById(tabname).classList.add('active-tab');
-};
+}
+
+/* ========== Section active link ========== */
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
+
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if (top >= offset && top < offset + height) {
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+            });
+        }
+    });
+}
+
+/* ========== contact form activation ========== */
+const typed = new Typed('.multiple-text', {
+    strings: ['Software Developer'],
+    typeSpeed: 100,
+    backSpeed: 100,
+    backDelay: 1000,
+    loop: true,
+});
 
 /* ========== menu icon ========== */
 
@@ -23,7 +52,7 @@ let navbar = document.querySelector('.navbar');
 function toggleButton() {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
-};
+}
 
 menuIcon.addEventListener('click', toggleButton);
 
@@ -86,22 +115,20 @@ ScrollReveal().reveal('.about-content', {origin: 'right'});
 
 /* ========== contact form activation ========== */
 
-const form = document.querySelector("#form")
-const submitButton = document.querySelector("#submit")
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyMJRNRU5fNKHrpcwFrJ5P0BWcBf8FLvLaBtYxujNZAuobgWtRex7YQvbz-8Tes-RQ9_w/exec'
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwVf16ZbJ0U5CyiLXdCdofaKFn9e3ESFmokCQ8dfCtcYJ9VbjXvUOGI8E6_PsWErH3S/exec'
+const form = document.forms['contact-us']
+const msg = document.getElementById("msg")
 
 form.addEventListener('submit', e => {
-    submitButton.disabled = true
     e.preventDefault()
-    let requestBody = new FormData(form)
-    fetch(scriptURL, { method: 'POST', body: requestBody})
-    .then(response => {
-        alert('Success!', response)
-        submitButton.disabled = false
-        })
-    .catch(error => {
-    alert('Error!', error.message)
-        submitButton.disabled = false
-
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+        msg.innerHTML = "<i class='bx bxs-check-circle' ></i> Message sent successfully!"
+        console.log('Success!', response)
+        setTimeout(function() {
+            msg.innerHTML = ""
+        }, 5000)
+        form.reset()
     })
-})
+    .catch(error => console.error('Error!', error.message))
+});

@@ -59,7 +59,8 @@ section {
     transition: 0.3s;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
     color: var(--main-color);
 }
 
@@ -93,6 +94,10 @@ nav a:hover {
     margin-top: 200px;
     margin-left: 10px;
     margin-bottom: 100px;
+}
+
+.home-content p span {
+    color: #fff;
 }
 
 .area {
@@ -442,17 +447,18 @@ span {
 
 .contact-left p {
     margin-top: 30px;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .contact-left p i {
     color: var(--main-color);
     margin-right: 15px;
-    font-size: 30px;
+    font-size: 35px;
 }
 
 .contact-right {
     flex-basis: 50%;
+    
 }
 
 .contact form {
@@ -477,6 +483,13 @@ span {
     background: #fff;
     border-radius: 0.8rem;
     margin: 0.7rem 0;
+}
+
+#msg {
+    color: #24c223;
+    margin-top: -30px;
+    display: block;
+    text-align: center;
 }
 
 /* footer section */
