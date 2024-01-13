@@ -97,7 +97,7 @@ nav a.active {
 }
 
 .home-content p span {
-    color: #fff;
+    color: var(--text-color);
 }
 
 .area {
@@ -370,6 +370,7 @@ span {
 .project-container .project-box {
     position: relative;
     border-radius: 2rem;
+    height: 300px;
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
     display: flex;
@@ -580,5 +581,9 @@ span {
     
     .contact-left p i {
         font-size: 20px;
+    }
+
+    .project-container .project-box {
+        height: fit-content;
     }
 }
